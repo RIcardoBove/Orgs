@@ -1,15 +1,15 @@
 package com.example.orgs.activity
 
+import android.app.Dialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.RecyclerView
-import com.example.orgs.R
 import com.example.orgs.adapter.ListaProdutosAdapter
 import com.example.orgs.dao.ProdutosDao
 import com.example.orgs.databinding.ActivityListaProdutosBinding
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListaProdutosActivity : AppCompatActivity() {
 
@@ -27,6 +27,17 @@ class ListaProdutosActivity : AppCompatActivity() {
         setContentView(binding.root)
         configuraRecyclerView()
         configuraFab()
+
+        AlertDialog.Builder(this)
+            .setTitle("Titulo para teste")
+            .setMessage("mensagem de teste")
+            .setPositiveButton("Confirmar") { _, _ ->
+
+            }
+            .setNegativeButton("Cancelar") { _, _ ->
+
+            }
+            .show()
     }
 
     override fun onResume() {
